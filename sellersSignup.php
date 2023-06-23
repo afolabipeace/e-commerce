@@ -10,11 +10,10 @@
     <title>Sellers Signup</title>
 
 </head>
-<body  style='background-color:rgba(59, 10, 65, .8);'>
-<div class='container vh-100' style='background-color:rgba(59, 10, 65, .8);'><br><br>
+<body  style='background-color:rgba(79, 34, 65, .8);'>
+<div class='container vh-100' ><br><br>
     <div class="row">
-         <div class=" col-5 mx-auto shadow-lg p-3">
-            <div class='card p-4' >
+         <div class=" col-5 mx-auto shadow-lg p-4 bg-light">
                 <form action="process_sellerSignup.php" method='POST'>
                 <h1 class='text-center '  style='color:rgba(59, 10, 65, .8);'>SIGNUP</h1>
                     <?php
@@ -33,10 +32,10 @@
 
                 <input type="password" placeholder='Password' name='password' class='form-control mb-3' style='border-radius:30px;'>
 
-                <input type="submit"  style='background-color:rgba(59, 10, 65, .8);' class='btn btn-success text-light' name='submit' value='submit'>
+                <input type="submit"style='background-color:rgba(59, 10, 65, .8);border-radius:30px;' class='btn btn-success text-light w-100' name='submit' value='Submit'><br><br>
+                <p><a href="sellersSignin.php"style='text-decoration:none;color:black;'>Already have an account Signin</a></p>
                 <!-- <button class='btn btn-success '>SIGNUP</button> -->
                </form>
-            </div>
         </div>
     </div>
 </div>

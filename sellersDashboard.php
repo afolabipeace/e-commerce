@@ -13,8 +13,8 @@
 <body style='background-color:rgba(59, 10, 65, .8);'>
   <div class="container"><br><br>
     <div class="row">
-        <div class="col-5 mx-auto" style='background-color:rgba(59, 10, 65, .8);'>
-          <h3 class='text-center text-light'>UPLOAD YOUR PRODUCT</h3>
+        <div class="col-5 mx-auto p-4 shadow bg-light" >
+          <h3 class='text-center 'style='color:rgba(59, 10, 65, .8);'>UPLOAD YOUR PRODUCT</h3>
           <form action="process_sellersDashboard.php" method="post" enctype="multipart/form-data">
            <!-- <?php
             session_start();
@@ -31,11 +31,11 @@
                         
             <input type="text" placeholder='Price' name='price' class='form-control mb-3' style='border-radius:30px;'><br>
                         
-            <input type="file" name='profilePic'class='text-light mb-3'><br>
+            <input type="file" name='profilePic'class='text-dark mb-3'><br>
 
                         
-            <select name="product_category" class="form-control mb-3 bg-transparent text-light" id="">
-            <option value="" class='text-light'>Choose a category</option>
+            <select name="product_category" class="form-control mb-3 bg-transparent text-dark" id="">
+            <option value="" class='text-dark'>Choose a category</option>
             <?php
                 require 'dbcred.php';
                $query = "SELECT * FROM category";
@@ -48,9 +48,8 @@
             ?>
             </select>
            <div>
-           <input type="Submit" name='Submit' id='button' class='btn btn-success' value='Submit'>
-
-            <button class="btn btn-success"><a href="seller_product.php" style='text-decoration:none;'>View Product</a></button>
+           <input type="Submit" name='Submit' id='button' class='btn btn-success text-light' value='Submit'style='background-color:rgba(59, 10, 65, .8);'>
+            <button class="btn " style='background-color:rgba(59, 10, 65, .8);'><a href="seller_product.php" style='text-decoration:none;color:white;'>View Product</a></button>
             
            </div>
 

@@ -11,7 +11,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
-  <div class="container-fluid">
+<h2 class="text-light">Autron</h2>
     <a class="navbar-brand text-danger" href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -21,9 +21,6 @@
         <li class="nav-item">
           <a class="nav-link active text-light" aria-current="page" href="./sellersDashboard.php">Upload Product</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Actions
@@ -31,60 +28,43 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="./sellersSignup.php">Signup</a></li>
             <li><a class="dropdown-item" href="./sellersSignin.php">Login</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
           </ul>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li> -->
       </ul>
-      <form class="d-flex">
-        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button> -->
-      </form>
     </div>
   </div>
 </nav>
-<div class='vh-100' style='padding: 10px;'>
-<h2 class="text-primary text-center">Products</h2><br><br>
-
-    <div class="row ">
+<div class='container ' style='padding: 10px;'>
+  <h2 class="text-primary text-center">Products</h2><br><br>
+  <?php
+  // echo $sellerDetails['name'];
+  ?>
+    <div class="row p-5">
         <?php
-            //  require 'dbcred.php';
-            //  $query2 = "SELECT * FROM product JOIN sellers USING (seller_id) JOIN category USING (category_id)";
-            //  $queryDb = $connectDb->query($query2);
-            //   //    $query3= "SELECT * FROM product JOIN category USING (category_id)";
-            //   //$queryDb = $connectDb->query($query3);
-            //  if ($queryDb->num_rows > 0) {
-            //   while ($all = $queryDb->fetch_assoc()) {
-            //       $image = $all['image'];}}
-
-            session_start();
             require 'dbcred.php';
-            // $user_id = $_SESSION['user_id'];
-            if(isset($_SESSION['seller_id'])){echo"hello";
-            $id = $_SESSION['seller_id'];
-            // $query = "SELECT * FROM product WHERE seller_id = '$id'";
-                $query = "SELECT * FROM product JOIN sellers USING (seller_id = '$id') JOIN category USING (category_id)";
+            session_start();
+            $seller_id = $_SESSION['seller_id'];
+
+                $query = "SELECT * FROM product WHERE `seller_id` = $seller_id";
                 $queryDb = $connectDb->query($query);
                 if ($queryDb->num_rows > 0) {
-                    while ($all = $queryDb->fetch_assoc ()) {
+                  print_r($queryDb);
+                    while ($all = $queryDb->fetch_assoc()) {
                         $image = $all['image'];
                         echo "
-                        <div class='col-2 mx-auto text-center'>
-                        <div class='card p-2'><img src='uploads/{$all['image']}' style='height:25vh;' alt=''>
-                         <div class='h5 text-dark'>Name: {$all['name']}</div>
-                            <div class='h6 '>Product: {$all['product_name']}</div>
-                            <div class='h6 fw-bold'>Price:£{$all['price']}</div>
-                            <div class='h6  text-dark'>Quantity: {$all['quantity']}</div>
-                          <div class='h6  text-dark'>Details: {$all['details']}</div>
-                            </div>
+                        <div class='col-2 m-3 p-3 shadow' style='width: 18rem;' >
+                        <ul class='list-group list-group-flush'>
+                        <li class='list-group-item'>Name: {$all['name']}</li><img src='uploads/{$all['image']}' style='height:30vh;' alt=''>
+                        <li class='list-group-item'>Product: {$all['product_name']}</li>
+                        <li class='list-group-item'>Price: #{$all['price']}</li>
+                        <li class='list-group-item'>Quantity: {$all['quantity']}</li>
+                        <li class='list-group-item'>Category-Name: {$all['details']}</li>
+                        </ul>
                     </div>"
                     ; 
                     }
                   }
-                }
+                // }
             ?>
             
         </div >

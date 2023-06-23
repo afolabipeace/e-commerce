@@ -10,11 +10,10 @@
     <title>Sellers Signup</title>
 
 </head>
-<body style='background-color:rgba(59, 10, 65, .8);'>
-<div class='container vh-100' style='background-color:rgba(59, 10, 65, .8);'><br><br>
+<body style='background-color:rgba(79, 34, 65, .8);'>
+<div class='container vh-100'><br><br>
     <div class="row">
-         <div class=" col-5 mx-auto shadow-lg p-3">
-            <div class='card p-4' >
+         <div class=" col-5 mx-auto shadow-lg p-4 bg-light">
             <?php
         require 'dbcred.php';
          session_start();
@@ -26,12 +25,12 @@
             $queryDb = $connectDb->query($query);
 
             if ($queryDb->num_rows > 0) {
-                $userDetails = $queryDb->fetch_assoc ();
-                $_SESSION['seller_id']= $userDetails['seller_id'];
-                $pass = $userDetails['password'];
+                $sellerDetails = $queryDb->fetch_assoc ();
+                $pass = $sellerDetails['password'];
                 $verify = password_verify($password, $pass);
                 if ($verify) {
-                    print_r($_SESSION['seller_id']);
+                    $_SESSION['seller_id']= $sellerDetails['seller_id'];
+                    // print_r($_SESSION['seller_id']);
                     header("Location: sellersDashboard.php");
                 } 
             else {
@@ -47,10 +46,9 @@
                 <h1 class='text-center' style='color:rgba(59, 10, 65, .8);'>SIGNIN</h1>
                 <input type="email" placeholder='Email' name='email' class='form-control mb-3' style='border-radius:30px;'>
                 <input type="password" placeholder='Password' name='password' class='form-control mb-3' style='border-radius:30px;'>
-                <input type="submit" class='btn btn-success text-light' style='background-color:rgba(59, 10, 65, .8);' name='submit' value='submit'>
-                <!-- <button class='btn btn-success '>SIGNUP</button> -->
+                <input type="submit" class='btn btn-success text-light w-100' style='background-color:rgba(59, 10, 65, .8);border-radius:30px;' name='submit' value='Submit'><br><br>
+                <p><a href="sellersSignup.php"style='text-decoration:none;color:black;'>Don't have an account yet Signup</a></p>
                </form>
-            </div>
         </div>
     </div>
 </div>

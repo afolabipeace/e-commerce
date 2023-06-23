@@ -32,9 +32,8 @@
                 <input type="text" placeholder='Address' name='address' class='form-control mb-3'style='border-radius:30px;'>
                 <input type="email" placeholder='Email' name='email' class='form-control mb-3'style='border-radius:30px;'>
                 <input type="password" placeholder='Password' name='password' class='form-control mb-3'style='border-radius:30px;'>
-                <input type="submit" class='btn btn-success w-100' name='submit' value='submit'style='border-radius:30px;'>
-                <p>Don't have an account yet Signup</p>
-                <button class='btn btn-success w-100'><a href="signin.php"style='text-decoration:none;color:white;border-radius:30px;'>SIGNIN</a></button>
+                <input type="submit" class='btn btn-success w-100' name='submit' value='Signup'style='border-radius:30px;'>
+                <p><a href="signin.php"style='text-decoration:none;color:black;'> Already have an account Signin</a></p>
                 <!-- <button class='btn btn-success '>SIGNUP</button> -->
                </form>
             </div>

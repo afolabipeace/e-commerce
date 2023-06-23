@@ -44,17 +44,14 @@
                 echo "<div class='alert alert-danger text-center'> Invalid Login Details.</div>";
             }
         }
-
-
     ?>
                <!-- <form action=<?php echo $_SERVER['PHP_SELF'] ?> method='POST'> -->
                <form action='injectSignin.php' method='POST'>
                 <h3 class='text-center'style='color:rgb(117, 190, 132);'>USER SIGNIN</h3>
                 <input type="email" placeholder='Email' name='email' class='form-control mb-3'style='border-radius:30px;'>
                 <input type="password" placeholder='Password' name='password' class='form-control mb-3'style='border-radius:30px;'>
-                <input type="submit" class='btn btn-success w-100 mb-5' name='submit' value='submit'style='border-radius:30px;'>
-                <p>Don't have an account yet Signup</p>
-                <button class='btn btn-success w-100'><a href="signup.php"style='text-decoration:none;color:white;border-radius:30px;'>SIGNUP</a></button>
+                <input type="submit" class='btn btn-success w-100 mb-5' name='submit' value='Signin'style='border-radius:30px;'>
+                <p><a href="signup.php"style='text-decoration:none;color:black;'>Don't have an account yet Signup</a></p>
                </form>
             </div>
         </div>

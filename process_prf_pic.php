@@ -1,7 +1,4 @@
 <?php
-    // print_r($_FILES);
-
-    // print_r($_POST);
     session_start();
     require('dbcred.php');
     $fileName = $_FILES['profilePic']['name'];

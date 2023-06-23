@@ -10,14 +10,14 @@
 </div>
     <div class='container'>
       <H2 class='text-center fw-bold'>
-        <?php  
-          echo $userDetails['first_name'];
-          echo $userDetails['last_name'];
-        ?>
+       
       </H2>
         <div class="row gx-3 gy-5 mb-3 pt-5">
           <?php
                require 'dbcred.php';
+          // session_start();
+          //   if(isset($_SESSION['seller_id'])){
+          //      $seller_id = $_SESSION['seller_id'];
                $query2 = "SELECT * FROM product JOIN sellers USING (seller_id) JOIN category USING (category_id)";
                $queryDb = $connectDb->query($query2);
                 //    $query3= "SELECT * FROM product JOIN category USING (category_id)";
@@ -38,7 +38,6 @@
                             <div class='h6 text-dark'>Category-Name: {$all['cat_name']}</div>
                             <form method='post' action='addToCart.php'>
                            <input type='hidden' name='index' value='{$all['product_id']}'>
-                           <input type='hidden' name='index2' value='{$userDetails['user_id']}'>
                            <button class='btn btn-success m-2' type='submit' name='addToCart' value='addToCart'>Add to Cart</button>
                            </form>
                            </div>
@@ -49,6 +48,7 @@
                            ; 
                           }
                         }
+                      // }
                         
                         
                         
